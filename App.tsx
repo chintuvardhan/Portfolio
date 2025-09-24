@@ -321,7 +321,7 @@ const EDUCATION: Education[] = [
     },
     {
         degree: "Intermediate MPC",
-        institution: "Govt. Junior College",
+        institution: "Government Junior College",
         period: "2019-2021",
         score: "Percentage: 70.6%"
     },
