@@ -1,0 +1,59 @@
+/* Extra project styles (Tailwind is loaded via CDN in index.html) */
+
+/* Ensure full-height layout baseline */
+html, body, #root {
+  height: 100%;
+}
+
+/* A simple container utility (pairs well with Tailwind) */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Improve focus visibility for keyboard users */
+a, button, input, textarea {
+  outline-offset: 2px;
+}
+
+/* Subtle text selection color that works in light/dark */
+::selection {
+  background: rgba(8, 145, 178, 0.25); /* cyan-600 at ~25% */
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *:not([data-allow-motion]) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ensure in-page anchor navigation isn't obscured by the fixed header */
+/* Global padding for scroll anchoring */
+html {
+  scroll-padding-top: 88px; /* default header height buffer */
+}
+
+/* Fine-tune section targets */
+section[id],
+h2[id],
+h3[id] {
+  scroll-margin-top: 88px;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 96px; /* slightly larger header on md+ */
+  }
+  section[id],
+  h2[id],
+  h3[id] {
+    scroll-margin-top: 96px;
+  }
+}
