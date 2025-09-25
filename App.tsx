@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import emailjs from 'emailjs-com';
 import React, { useState, useEffect, useRef, useCallback, useMemo, ReactNode, Component } from 'react';
 import { BrowserRouter, Routes, Route, Link, Outlet, useLocation } from 'react-router-dom';
 const Skills = React.lazy(() => import('./src/components/Skills/Skills'));
+=======
+import React, { useState, useEffect, useRef, useCallback, useMemo, ReactNode, Component } from 'react';
+import { BrowserRouter, Routes, Route, Link, Outlet, useLocation } from 'react-router-dom';
+import { Skills } from './src/components/Skills/Skills';
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
 
 declare global {
     namespace JSX {
@@ -39,6 +45,7 @@ interface Skill {
   level: number;
 }
 
+<<<<<<< HEAD
 interface Testimonial {
     name: string;
     role: string;
@@ -134,6 +141,8 @@ const BLOG_POSTS: BlogPost[] = [
     }
 ];
 
+=======
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
 interface Project {
   title: string;
   description: string;
@@ -553,6 +562,7 @@ const Header: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
         { label: 'contact', path: '/contact' },
     ];
 
+<<<<<<< HEAD
     // Keyboard navigation for menu
     const navRef = useRef<HTMLUListElement>(null);
     useEffect(() => {
@@ -578,11 +588,18 @@ const Header: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-lg shadow-md dark:shadow-lg ${isScrolled || isMenuOpen ? 'bg-gradient-to-r from-cyan-50/90 via-blue-50/90 to-purple-50/90 dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95' : 'bg-gradient-to-r from-cyan-50/95 via-blue-50/95 to-purple-50/95 dark:from-slate-900/97 dark:via-slate-800/97 dark:to-slate-900/97'}`}>
             <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
                 <Link to="/about" className="text-2xl font-bold tracking-widest group" aria-label="Go to About">
+=======
+    return (
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-lg shadow-md dark:shadow-lg ${isScrolled || isMenuOpen ? 'bg-gradient-to-r from-cyan-50/90 via-blue-50/90 to-purple-50/90 dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95' : 'bg-gradient-to-r from-cyan-50/95 via-blue-50/95 to-purple-50/95 dark:from-slate-900/97 dark:via-slate-800/97 dark:to-slate-900/97'}`}>
+            <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+                <Link to="/about" className="text-2xl font-bold tracking-widest group">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                     <span className="text-cyan-500 dark:text-cyan-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300">D</span>
                     <span className="text-violet-500 dark:text-violet-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300">M</span>
                     <span className="text-blue-500 dark:text-blue-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300">K</span>
                     <span className="text-green-500 dark:text-green-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-300">R</span>
                 </Link>
+<<<<<<< HEAD
                 <div className="hidden md:flex items-center space-x-4 sm:space-x-6">
                     <ul className="flex items-center space-x-4 sm:space-x-6" ref={navRef} role="menubar" aria-label="Main navigation">
                         {navLinks.map(({ label, path }) => {
@@ -596,6 +613,18 @@ const Header: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
                                         className={`capitalize text-base font-medium transition-colors duration-300 relative group px-2 py-2 rounded-lg ${active ? 'bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent' : 'text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-orange-400 hover:via-pink-500 hover:to-purple-700 hover:bg-clip-text hover:text-transparent'}`}
                                         tabIndex={0}
                                         role="menuitem"
+=======
+                <div className="hidden md:flex items-center space-x-6">
+                    <ul className="flex items-center space-x-6">
+                        {navLinks.map(({ label, path }) => {
+                            const active = location.pathname === path;
+                            return (
+                                <li key={path}>
+                                    <Link
+                                        to={path}
+                                        aria-current={active ? 'page' : undefined}
+                                        className={`capitalize text-base font-medium transition-colors duration-300 relative group ${active ? 'bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent' : 'text-slate-600 dark:text-slate-300 hover:bg-gradient-to-r hover:from-orange-400 hover:via-pink-500 hover:to-purple-700 hover:bg-clip-text hover:text-transparent'}`}
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                                     >
                                         {label}
                                         <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 transition-all duration-300 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -606,6 +635,7 @@ const Header: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
                     </ul>
                     <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                 </div>
+<<<<<<< HEAD
                 <div className="md:hidden flex items-center gap-2 sm:gap-4">
                     <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                     <button
@@ -616,31 +646,53 @@ const Header: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
                         role="button"
                         aria-pressed={isMenuOpen}
                     >
+=======
+                <div className="md:hidden flex items-center gap-4">
+                    <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                         {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
                     </button>
                 </div>
             </nav>
             {/* Mobile Menu */}
+<<<<<<< HEAD
             <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <ul className="flex flex-col items-center justify-center py-4 bg-gradient-to-b from-cyan-50/95 via-blue-50/95 to-purple-50/95 dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95 backdrop-blur-lg">
                     {navLinks.map(({ label, path }) => {
                         const active = location.pathname === path;
                         return (
                             <li key={`${path}-mobile`} className="py-2 w-full">
+=======
+             <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                 <ul className="flex flex-col items-center justify-center py-4 bg-gradient-to-b from-cyan-50/95 via-blue-50/95 to-purple-50/95 dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95 backdrop-blur-lg">
+                     {navLinks.map(({ label, path }) => {
+                        const active = location.pathname === path;
+                        return (
+                            <li key={`${path}-mobile`} className="py-2">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                                 <Link
                                     to={path}
                                     onClick={() => setIsMenuOpen(false)}
                                     aria-current={active ? 'page' : undefined}
+<<<<<<< HEAD
                                     aria-label={`Go to ${label}`}
                                     className={`capitalize text-lg font-semibold transition-colors duration-300 block px-4 py-3 rounded-lg ${active ? 'text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-900/30' : 'text-slate-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20'}`}
                                     tabIndex={0}
+=======
+                                    className={`capitalize text-lg font-semibold transition-colors duration-300 ${active ? 'text-cyan-600 dark:text-cyan-400' : 'text-slate-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400'}`}
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                                 >
                                     {label}
                                 </Link>
                             </li>
                         );
                     })}
+<<<<<<< HEAD
                 </ul>
+=======
+                 </ul>
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
             </div>
         </header>
     );
@@ -668,7 +720,11 @@ const Hero: React.FC = () => {
     }, [titles.length]);
 
     return (
+<<<<<<< HEAD
         <section id="hero" className="min-h-[calc(100vh-7rem)] flex items-center justify-center bg-cover bg-center relative overflow-hidden pt-20 sm:pt-24 md:pt-28">
+=======
+        <section id="hero" className="min-h-[calc(100vh-7rem)] flex items-center justify-center bg-cover bg-center relative overflow-hidden pt-28">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
             <div
                 className="absolute inset-0 bg-white/20 dark:bg-black/60"
                 style={{ transform: `translateY(${offsetY * 0.5}px)` }}
@@ -677,6 +733,7 @@ const Hero: React.FC = () => {
                 className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black/10 via-transparent to-blue-900/20 dark:from-black/30 dark:to-blue-900/50"
                 style={{ transform: `translateY(${offsetY * 0.4}px)` }}
             ></div>
+<<<<<<< HEAD
             <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 text-slate-900 dark:text-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="rounded-2xl bg-white/60 dark:bg-white/10 backdrop-blur border border-white/40 dark:border-white/10 shadow-2xl p-4 sm:p-6 md:p-8">
@@ -717,6 +774,45 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
             </div>
+=======
+            <div className="relative z-10 w-full px-6 md:px-10 text-slate-900 dark:text-white">
+                <div className="max-w-6xl mx-auto">
+                    <div className="rounded-2xl bg-white/60 dark:bg-white/10 backdrop-blur border border-white/40 dark:border-white/10 shadow-2xl p-6 md:p-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    {/* Left: Profile image box (circular with thicker gradient border) */}
+                    <div className="flex justify-center md:justify-start order-1">
+                        <div className="relative p-[3px] rounded-full bg-gradient-to-tr from-violet-500 to-cyan-500 shadow-2xl">
+                            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden backdrop-blur bg-white/30 dark:bg-white/10">
+                                <img
+                                    src="/profile.jpg"
+                                    alt="Profile"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right: Intro text and actions */}
+                    <div className="text-center md:text-left order-2">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 animate-[fadeIn_1.2s_ease-in-out]">
+                            Dhoddi Mallikarjuna Reddy
+                        </h1>
+                        <div className="text-2xl md:text-4xl font-semibold mb-8 h-12">
+                            <span key={currentTitleIndex} className="animate-[slideUpFadeIn_1s_ease-out]">{titles[currentTitleIndex]}</span>
+                        </div>
+                        <div className="flex justify-center md:justify-start items-center gap-4">
+                            <a href="/Dhoddi_Mallikarjuna_Reddy_CV.pdf" download className="px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-full text-lg font-semibold text-white hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 transform transition-all duration-300">
+                                Download CV
+                            </a>
+                            <a href="https://www.linkedin.com/in/dhoddi-mallikarjuna-reddy/" target="_blank" rel="noopener noreferrer" className="p-3 bg-black/10 dark:bg-white/10 rounded-full hover:bg-cyan-500/50 text-slate-800 dark:text-white hover:text-white transform transition-all duration-300"><LinkedInIcon /></a>
+                            <a href="mailto:dhoddireddy@gmail.com" className="p-3 bg-black/10 dark:bg-white/10 rounded-full hover:bg-violet-500/50 text-slate-800 dark:text-white hover:text-white transform transition-all duration-300"><EmailIcon /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
         </section>
     );
 };
@@ -837,10 +933,14 @@ const About: React.FC = () => {
     }, []);
 
     return (
+<<<<<<< HEAD
             <div id="main-content" className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
 
 
 
+=======
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
             {/* Hero Section */}
             <div id="about-hero" className="relative overflow-hidden">
                 {/* Animated Background */}
@@ -850,9 +950,15 @@ const About: React.FC = () => {
                     <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-orange-400/20 to-yellow-400/20 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
                 </div>
 
+<<<<<<< HEAD
                 <div className="relative container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-20 md:py-24">
                     <div className="max-w-6xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+=======
+                <div className="relative container mx-auto px-6 py-24">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                             {/* Left: Profile Image */}
                             <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                                 <div className="relative">
@@ -861,10 +967,15 @@ const About: React.FC = () => {
                                         <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-white/20 dark:bg-white/10 backdrop-blur">
                                             <img
                                                 src="/profile.jpg"
+<<<<<<< HEAD
                                                 alt="Portrait of Dhoddi Mallikarjuna Reddy, Tech Superman, Data Scientist, Electronics Engineer"
                                                 className="w-full h-full object-cover"
                                                 aria-label="Profile image of Dhoddi Mallikarjuna Reddy"
                                                 role="img"
+=======
+                                                alt="Tech Superman - Dhoddi Mallikarjuna Reddy"
+                                                className="w-full h-full object-cover"
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                                             />
                                         </div>
                                     </div>
@@ -1183,7 +1294,10 @@ interface Service {
     description: string;
     icon: React.ReactNode;
     gradient: string;
+<<<<<<< HEAD
     features: string[];
+=======
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
     link?: string;
 }
 
@@ -1254,7 +1368,11 @@ const Services: React.FC = () => {
     ];
 
     return (
+<<<<<<< HEAD
         <div id="main-content" className="space-y-20">
+=======
+        <div className="space-y-20">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
             {/* Hero Section */}
             <AnimatedSection id="services-hero" className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50 dark:from-slate-900/50 dark:via-blue-900/30 dark:to-slate-900/50">
@@ -1387,7 +1505,11 @@ const Services: React.FC = () => {
                                         Key Features:
                                     </h4>
                                     <ul className="space-y-2">
+<<<<<<< HEAD
                                         {service.features.map((feature: string, featureIndex: number) => (
+=======
+                                        {service.features.map((feature, featureIndex) => (
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                                             <li
                                                 key={featureIndex}
                                                 className="flex items-center text-sm text-slate-600 dark:text-slate-400"
@@ -1590,6 +1712,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen }) => 
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(project); } }}
         >
             <div className="relative mb-4">
+<<<<<<< HEAD
                 <div className={`relative w-full h-48 rounded-md overflow-hidden bg-slate-200 dark:bg-slate-700 ${!imageLoaded ? 'shimmer' : ''}`}> 
                     <img 
                         src={project.image} 
@@ -1599,6 +1722,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen }) => 
                         loading="lazy"
                         aria-label={`Image for project ${project.title}`}
                         role="img"
+=======
+                <div className={`relative w-full h-48 rounded-md overflow-hidden bg-slate-200 dark:bg-slate-700 ${!imageLoaded ? 'shimmer' : ''}`}>
+                    <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className={`w-full h-48 object-cover absolute top-0 left-0 transition-opacity duration-500 transform group-hover:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        onLoad={() => setImageLoaded(true)}
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                     />
                 </div>
                 {project.funded && fundingBadge(project.funded)}
@@ -1611,6 +1742,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen }) => 
                         <span key={skill} className="bg-orange-100 dark:bg-orange-900/50 text-orange-500 dark:text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded-full">{skill}</span>
                     ))}
                 </div>
+<<<<<<< HEAD
                 <button 
                     onClick={(e) => { e.stopPropagation(); onOpen(project); }} 
                     className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent font-semibold hover:underline mt-auto inline-flex items-center gap-1"
@@ -1619,6 +1751,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onOpen }) => 
                 >
                     Learn More &rarr;
                 </button>
+=======
+                <button onClick={(e) => { e.stopPropagation(); onOpen(project); }} className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent font-semibold hover:underline mt-auto inline-flex items-center gap-1">Learn More &rarr;</button>
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
             </div>
         </div>
     );
@@ -1737,7 +1872,11 @@ const Projects: React.FC = () => {
     };
 
     return (
+<<<<<<< HEAD
         <div id="main-content" className="min-h-screen bg-gradient-to-br from-orange-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-orange-900/30 dark:to-purple-900/30">
+=======
+        <div className="min-h-screen bg-gradient-to-br from-orange-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-orange-900/30 dark:to-purple-900/30">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
             {/* Material Design App Bar */}
             <div className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-orange-200 dark:border-orange-700 shadow-sm">
                 <div className="container mx-auto px-6 py-4">
@@ -1836,7 +1975,11 @@ const Projects: React.FC = () => {
             </div>
 
             {/* Main Content */}
+<<<<<<< HEAD
             <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+=======
+            <div className="container mx-auto px-6 py-8">
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                 {/* Filters and Stats */}
                 <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div className="flex items-center space-x-4">
@@ -1976,10 +2119,15 @@ const Projects: React.FC = () => {
                                         <div className="relative w-24 h-24 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 rounded-lg overflow-hidden flex-shrink-0">
                                             <img
                                                 src={project.image}
+<<<<<<< HEAD
                                                 alt={`Project: ${project.title}`}
                                                 className="w-full h-full object-cover"
                                                 aria-label={`Image for project ${project.title}`}
                                                 role="img"
+=======
+                                                alt={project.title}
+                                                className="w-full h-full object-cover"
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                                             />
                                         </div>
 
@@ -2073,10 +2221,15 @@ const Projects: React.FC = () => {
                             <div className="relative h-64 bg-gradient-to-br from-orange-200 to-purple-300 dark:from-orange-700 dark:to-purple-600">
                                 <img
                                     src={selectedProject.image}
+<<<<<<< HEAD
                                     alt={`Project: ${selectedProject.title}`}
                                     className="w-full h-full object-cover"
                                     aria-label={`Image for project ${selectedProject.title}`}
                                     role="img"
+=======
+                                    alt={selectedProject.title}
+                                    className="w-full h-full object-cover"
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
@@ -3708,6 +3861,7 @@ const Contact: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+<<<<<<< HEAD
         setStatus('Sending...');
         emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
@@ -3739,6 +3893,12 @@ const Contact: React.FC = () => {
 //    REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
 //    REACT_APP_EMAILJS_USER_ID=your_user_id
 // 4. Configure your template fields to match: from_name, from_email, subject, message
+=======
+        setStatus('Thank you for your message! I\'ll get back to you soon.');
+        setTimeout(() => setStatus(''), 5000);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+    };
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
 
     const contactInfo = [
         {
@@ -4325,9 +4485,13 @@ const SkillsPage: React.FC = () => (
     <>
         <SetTitle title="DMKR | Skills" />
         <SkillsErrorBoundary>
+<<<<<<< HEAD
             <React.Suspense fallback={<div className="text-center py-12">Loading skills...</div>}>
                 <Skills />
             </React.Suspense>
+=======
+            <Skills />
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
         </SkillsErrorBoundary>
     </>
 );
@@ -4340,33 +4504,49 @@ const ProjectsPage: React.FC = () => (
 const ExperiencePage: React.FC = () => (
     <>
         <SetTitle title="DMKR | Experience" />
+<<<<<<< HEAD
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
             <Experience />
         </div>
+=======
+        <Experience />
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
     </>
 );
 const EducationPage: React.FC = () => (
     <>
         <SetTitle title="DMKR | Education" />
+<<<<<<< HEAD
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
             <EducationTimeline />
         </div>
+=======
+        <EducationTimeline />
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
     </>
 );
 const AchievementsPage: React.FC = () => (
     <>
         <SetTitle title="DMKR | Achievements" />
+<<<<<<< HEAD
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
             <Achievements />
         </div>
+=======
+        <Achievements />
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
     </>
 );
 const ContactPage: React.FC = () => (
     <>
         <SetTitle title="DMKR | Contact" />
+<<<<<<< HEAD
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
             <Contact />
         </div>
+=======
+        <Contact />
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
     </>
 );
 
@@ -4388,11 +4568,17 @@ const NotFoundPage: React.FC = () => (
 const App: React.FC = () => {
     return (
         <BrowserRouter>
+<<<<<<< HEAD
             {/* Skip to content link for accessibility */}
             <a href="#main-content" className="sr-only focus:not-sr-only absolute top-2 left-2 z-50 bg-cyan-600 text-white px-4 py-2 rounded shadow-lg">Skip to main content</a>
             <ScrollToTop />
             <Routes>
                 <Route element={<Layout />}> 
+=======
+            <ScrollToTop />
+            <Routes>
+                <Route element={<Layout />}>
+>>>>>>> 4d296c258f4c5959c323b24c71ea9daa993385e4
                     <Route path="/" element={<AboutPage />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/about" element={<AboutPage />} />
